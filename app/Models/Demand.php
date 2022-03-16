@@ -16,8 +16,6 @@ class Demand extends Model
         'name',
         'number_property',
         'description',
-        'date_finish',
-        'date_reopen',
     ];
 
     protected $guarded = [
@@ -39,4 +37,8 @@ class Demand extends Model
         return $this->hasOne(Category::class);
     }
 
+    public function details()
+    {
+        return $this->hasMany(Detail::class);
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDemandsTable extends Migration
+class CreateDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,18 @@ class CreateDemandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('demands', function (Blueprint $table) {
+        Schema::create('details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('demand_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('deadline_id')->constrained();
-            $table->string('name');
-            $table->integer('number_property');
+            $table->string('client_number');
+            $table->date('date_finish');
+            $table->date('date_reopen');
             $table->text('description');
-            $table->string('status');
+            $table->text('reopen_reason');
+            $table->text('finish_reason');
+            $table->text('comments');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -34,6 +35,6 @@ class CreateDemandsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('demands');
+        Schema::dropIfExists('details');
     }
 }
