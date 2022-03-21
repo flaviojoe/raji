@@ -46,7 +46,7 @@ class HomeController extends Controller
      */
     public function show($slug)
     {
-        return view('charts',['slug' => $slug]);
+        return view('site.graph.pizza',['slug' => $slug]);
     }
 
     /**

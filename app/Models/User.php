@@ -41,7 +41,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [
-        'statusLogin',
+        'status_login',
         'is_admin' => false,
         'is_tecnico' => false,
     ];
