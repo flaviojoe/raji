@@ -9,7 +9,16 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+                    @can('user')
+                        Usuário padrão!
+                    @elsecan('admin')
+                        Esse é o usuário ADMIN. Para acessar a tela principal 
+                        <x-nav-link :href="route('dashboard')">
+                            {{ __('clique aqui') }}
+                        </x-nav-link>
+                    @elsecan('tech')
+                        Usuário técnico
+                    @endcan
                 </div>
             </div>
         </div>
