@@ -26,4 +26,12 @@ Route::get('/dashboard', function () {
     return view('site.home.index');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/cadastro', function () {
+    return view('site.admin.register');
+})->middleware(['auth'])->name('site.cadastro');
+
+Route::get('/ad', function() {
+    return view('welcome');
+});
+
 require __DIR__.'/auth.php';
