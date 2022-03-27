@@ -7,7 +7,7 @@
 <x-auth-session-status class="mb-4" :status="session('status')" />
 
 <!-- Validation Errors -->
-<x-auth-validation-errors class="mb-4" :errors="$errors" />
+<x-auth-validation-errors class="mb-4 text-danger" :errors="$errors" />
 
 <form class="user" method="POST" action="{{ route('login') }}">
     @csrf
