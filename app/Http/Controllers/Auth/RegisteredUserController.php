@@ -47,8 +47,9 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        $message = "Usuário cadastrado com sucesso.";
+        // Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect([RouteServiceProvider::HOME, 200, $message=>'message']);
     }
 }

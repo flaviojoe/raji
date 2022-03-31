@@ -19,7 +19,7 @@
                 <!-- Validation Errors -->
                 <x-auth-validation-errors class="mb-4 text-danger" :errors="$errors" />
 
-                <form class="user" method="POST" action="{{ route('register') }}" >
+                <form class="user" method="POST" action="{{ route('register2') }}" >
                     @csrf
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="name"
